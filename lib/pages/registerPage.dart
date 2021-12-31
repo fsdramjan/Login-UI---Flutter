@@ -1,17 +1,11 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:login_register/components/backGround.dart';
-import 'package:login_register/pages/registerPage.dart';
+import 'package:login_register/pages/loginPage.dart';
 
-class LoginPage extends StatelessWidget {
-  //Code Available Github.com/fsdramjan
+class RegisterPage extends StatelessWidget {
+  //Sorry for typing mistake , I am buy a new keyboard someday ago.
 
-  //you will get source code in video description
-
-  //sorry for laggy laggy videos - My pc is so slow 😭
-
-  //next I will come with register page - Allah Hafez
+  //
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +22,7 @@ class LoginPage extends StatelessWidget {
               Container(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'Login'.toUpperCase(),
+                  'Register'.toUpperCase(),
                   style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
@@ -36,7 +30,30 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
+
+              TextField(
+                decoration: InputDecoration(
+                  labelText: 'Name',
+                  labelStyle: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 12,
+                  ),
+                ),
+              ),
+              SizedBox(height: 10),
+              TextField(
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  labelText: 'Mobile Number',
+                  labelStyle: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 12,
+                  ),
+                ),
+              ),
+              SizedBox(height: 10),
+
               TextField(
                 decoration: InputDecoration(
                   labelText: 'Email',
@@ -48,27 +65,18 @@ class LoginPage extends StatelessWidget {
               ),
               SizedBox(height: 10),
               TextField(
+                keyboardType: TextInputType.number,
+                obscureText: true,
                 decoration: InputDecoration(
                   labelText: 'Password',
                   labelStyle: TextStyle(
-                    fontSize: 12,
                     fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              SizedBox(height: 20),
-              Container(
-                alignment: Alignment.centerRight,
-                child: Text(
-                  'Forget your password?',
-                  style: TextStyle(
                     fontSize: 12,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue,
                   ),
                 ),
               ),
               SizedBox(height: 50),
+              // ignore: deprecated_member_use
               RaisedButton(
                 onPressed: () {},
                 shape: RoundedRectangleBorder(
@@ -88,7 +96,7 @@ class LoginPage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  child: Text('LOGIN',
+                  child: Text('SIGN UP',
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -101,7 +109,7 @@ class LoginPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    '''Don't have account?''',
+                    '''Already have an account?''',
                     style: TextStyle(
                       color: Colors.black,
                     ),
@@ -111,11 +119,11 @@ class LoginPage extends StatelessWidget {
                     onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (_) => RegisterPage(),
+                        builder: (_) => LoginPage(),
                       ),
                     ),
                     child: Text(
-                      'Sign up',
+                      'Sign in',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.blue,
